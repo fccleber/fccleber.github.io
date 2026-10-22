@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cleber F. Carvalho — AI Engineer &amp; Machine Learning Engineer</title>
+<meta name="description" content="Cleber F. Carvalho, AI Engineer & Machine Learning Engineer. LLM and RAG systems whose answers can be traced back to their sources. Experience across Japan, France and Brazil.">
+<meta property="og:title" content="Cleber F. Carvalho — AI Engineer & Machine Learning Engineer">
+<meta property="og:description" content="LLM and RAG systems whose answers can be traced back to their sources. Experience across Japan, France and Brazil.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://fccleber.github.io/">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="pt_BR">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23c9a06a'/%3E%3Cstop offset='1' stop-color='%238a6a3f'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='32' cy='32' r='32' fill='url(%23g)'/%3E%3Ctext x='32' y='40' font-family='monospace' font-size='22' font-weight='700' fill='%2307080b' text-anchor='middle'%3ECC%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, ::before, ::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { -webkit-font-smoothing: antialiased; }
+  :root {
+    --bg: #07080b; --card: #0e1016; --card-2: #12151d;
+    --ink: #efece4; --ink-2: #948e82; --ink-3: #56514a;
+    --gold: #c9a06a; --gold-hi: #e3c795;
+    --line: rgba(239,236,228,.08);
+    --sans: "DM Sans", system-ui, sans-serif;
+    --mono: "JetBrains Mono", ui-monospace, monospace;
+  }
+  body.light {
+    --bg: #f5f1e8; --card: #ffffff; --card-2: #faf7f0;
+    --ink: #201d18; --ink-2: #6b6459; --ink-3: #9c9284;
+    --gold: #96723f; --gold-hi: #7a5a30;
+    --line: rgba(32,29,24,.09);
+  }
+  body { background: var(--bg); color: var(--ink); font-family: var(--sans); line-height: 1.55; font-size: 14.5px; transition: background .25s, color .25s; }
+  a { color: inherit; text-decoration: none; }
+  ::selection { background: rgba(201,160,106,.25); color: var(--gold-hi); }
+
+  .page { max-width: 640px; margin: 0 auto; padding: clamp(1.5rem, 5vw, 3rem) 1.2rem; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: clamp(1.6rem, 4vw, 2.4rem); transition: background .25s, border-color .25s; }
+
+  .head { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; margin-bottom: 1.6rem; }
+  .head-left { display: flex; gap: .9rem; align-items: center; }
+  .avatar { width: 46px; height: 46px; border-radius: 50%; background: linear-gradient(135deg, var(--gold), #8a6a3f); display: flex; align-items: center; justify-content: center; font-family: var(--mono); font-weight: 600; color: var(--bg); font-size: .9rem; flex-shrink: 0; }
+  .name { font-size: 1.15rem; font-weight: 700; letter-spacing: -.01em; }
+  .role { font-size: .78rem; color: var(--ink-2); margin-top: 2px; }
+  .head-right { display: flex; flex-direction: column; align-items: flex-end; gap: .6rem; }
+  .top-controls { display: flex; align-items: center; gap: .7rem; }
+  .lang-switch { display: flex; gap: .4rem; font-family: var(--mono); font-size: .62rem; color: var(--ink-3); }
+  .lang-switch button { background: none; border: none; color: inherit; cursor: pointer; padding: 0; font: inherit; }
+  .lang-switch button.on { color: var(--gold); }
+  .theme-toggle { background: none; border: 1px solid var(--line); border-radius: 50%; width: 26px; height: 26px; display: flex; align-items: center; justify-content: center; cursor: pointer; color: var(--ink-2); transition: color .2s, border-color .2s; flex-shrink: 0; }
+  .theme-toggle:hover { color: var(--gold); border-color: var(--gold); }
+  .theme-toggle svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 1.8; }
+  .theme-toggle .icon-sun { display: none; }
+  body.light .theme-toggle .icon-moon { display: none; }
+  body.light .theme-toggle .icon-sun { display: block; }
+  .icon-links { display: flex; flex-wrap: nowrap; white-space: nowrap; justify-content: flex-end; gap: .7rem; font-family: var(--mono); font-size: .65rem; color: var(--ink-2); }
+  .icon-links a:hover { color: var(--gold); }
+
+  .sec { margin-top: 1.6rem; padding-top: 1.4rem; border-top: 1px solid var(--line); }
+  .sec:first-of-type { margin-top: 0; padding-top: 0; border-top: none; }
+  .sec-label { font-family: var(--mono); font-size: .62rem; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); margin-bottom: .8rem; }
+  .about-text { font-size: .86rem; color: var(--ink-2); line-height: 1.75; }
+  .about-text + .about-text { margin-top: .6rem; }
+  .about-text strong { color: var(--ink); font-weight: 600; }
+
+  .row { padding: .55rem 0; }
+  .row-top { display: flex; justify-content: space-between; align-items: baseline; gap: .8rem; flex-wrap: wrap; }
+  .row-title { font-size: .87rem; font-weight: 600; color: var(--ink); }
+  .row-meta { font-family: var(--mono); font-size: .68rem; color: var(--ink-3); }
+  .row-desc { font-size: .8rem; color: var(--ink-2); margin-top: .25rem; line-height: 1.6; }
+  .row-stats { display: flex; flex-wrap: wrap; gap: .45rem; margin-top: .55rem; }
+  .stat { display: flex; align-items: baseline; gap: .35rem; border: 1px solid var(--line); border-radius: 7px; padding: .28rem .55rem; background: var(--card-2); }
+  .stat b { font-family: var(--mono); font-size: .78rem; font-weight: 600; color: var(--gold-hi); font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .stat span { font-size: .68rem; color: var(--ink-2); }
+  .row-links { display: flex; flex-wrap: wrap; gap: .9rem; margin-top: .55rem; font-family: var(--mono); font-size: .66rem; }
+  .row-links a { color: var(--gold); border-bottom: 1px solid rgba(201,160,106,.35); }
+  .row-links a:hover { color: var(--gold-hi); border-color: var(--gold-hi); }
+
+  .skill-group { margin-bottom: .7rem; }
+  .skill-group:last-child { margin-bottom: 0; }
+  .skill-cat { font-size: .78rem; font-weight: 600; color: var(--ink); margin-bottom: .15rem; }
+  .skill-list { font-size: .78rem; color: var(--ink-2); }
+
+  .contact-row { display: flex; flex-wrap: wrap; gap: 1.2rem; font-family: var(--mono); font-size: .75rem; }
+  .contact-row a { color: var(--gold-hi); border-bottom: 1px solid rgba(227,199,149,.3); }
+  .contact-row a:hover { color: var(--gold); }
+  .note { font-size: .76rem; color: var(--ink-3); margin-top: .7rem; }
+
+  footer { max-width: 640px; margin: 1.2rem auto 0; padding: 0 1.2rem 2rem; font-family: var(--mono); font-size: .62rem; color: var(--ink-3); display: flex; flex-wrap: wrap; gap: .5rem; justify-content: space-between; }
+
+  @media (max-width: 480px) {
+    .head { flex-direction: column; }
+    .head-right { align-items: flex-start; }
+    .icon-links { justify-content: flex-start; flex-wrap: wrap; }
+    .row-top { flex-direction: column; align-items: flex-start; gap: .2rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+  <div class="card">
+
+    <div class="head">
+      <div class="head-left">
+        <div class="avatar" aria-hidden="true">CC</div>
+        <div>
+          <div class="name">Cleber F. Carvalho</div>
+          <div class="role" data-en="AI Engineer &amp; Machine Learning Engineer · Brazil" data-pt="Engenheiro de IA &amp; Machine Learning · Brasil">AI Engineer &amp; Machine Learning Engineer · Brazil</div>
+        </div>
+      </div>
+      <div class="head-right">
+        <div class="top-controls">
+          <div class="lang-switch">
+            <button class="on" id="btn-en">EN</button><span>/</span><button id="btn-pt">PT</button>
+          </div>
+          <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light/dark mode">
+            <svg class="icon-moon" viewBox="0 0 24 24"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg class="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.5"/><path d="M12 2.5v2.5M12 19v2.5M4.2 4.2l1.8 1.8M18 18l1.8 1.8M2.5 12H5M19 12h2.5M4.2 19.8L6 18M18 6l1.8-1.8" stroke-linecap="round"/></svg>
+          </button>
+        </div>
+        <div class="icon-links">
+          <a href="resume/Cleber_Carvalho_Resume.pdf" target="_blank" rel="noopener noreferrer" data-en="Resume" data-pt="Currículo">Resume</a>
+          <a href="https://github.com/fccleber" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://www.linkedin.com/in/fccleber/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="mailto:you@example.com">Email</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ABOUT -->
+    <div class="sec">
+      <div class="sec-label" data-en="About" data-pt="Sobre">About</div>
+      <p class="about-text"
+         data-en="AI engineer with a software engineering and mechatronics foundation, building LLM and RAG systems whose answers can be traced back to their sources. Currently at &lt;strong&gt;Instituto de Pesquisas Eldorado&lt;/strong&gt;, building the RAG and analytics backend of a technology-intelligence platform for the oil &amp; gas sector, developed with university partners and already with the client."
+         data-pt="Engenheiro de IA com base em engenharia de software e mecatrônica, construindo sistemas de LLM e RAG cujas respostas podem ser rastreadas até as fontes. Atualmente no &lt;strong&gt;Instituto de Pesquisas Eldorado&lt;/strong&gt;, desenvolvendo o backend de RAG e analytics de uma plataforma de inteligência tecnológica para o setor de óleo e gás, feita com universidades parceiras e já com o cliente.">AI engineer with a software engineering and mechatronics foundation, building LLM and RAG systems whose answers can be traced back to their sources. Currently at <strong>Instituto de Pesquisas Eldorado</strong>, building the RAG and analytics backend of a technology-intelligence platform for the oil &amp; gas sector, developed with university partners and already with the client.</p>
+      <p class="about-text"
+         data-en="Experience across Japan, France and Brazil, from deep learning research on longitudinal health data to LLM systems in production. Work driven by validation and evaluation metrics, with a close eye on what the client actually needs."
+         data-pt="Experiência no Japão, na França e no Brasil, da pesquisa em deep learning com dados longitudinais de saúde a sistemas de LLM em produção. Trabalho guiado por validação e métricas de avaliação, com atenção ao que o cliente realmente precisa.">Experience across Japan, France and Brazil, from deep learning research on longitudinal health data to LLM systems in production. Work driven by validation and evaluation metrics, with a close eye on what the client actually needs.</p>
+    </div>
+
+    <!-- EXPERIENCE -->
+    <div class="sec">
+      <div class="sec-label" data-en="Experience" data-pt="Experiência">Experience</div>
+
+      <div class="row">
+        <div class="row-top">
+          <span class="row-title" data-en="AI Engineer · Machine Learning Engineer" data-pt="Engenheiro de IA · Engenheiro de Machine Learning">AI Engineer · Machine Learning Engineer</span>
+          <span class="row-meta" data-en="Apr 2026 — Present" data-pt="abr 2026 — atual">Apr 2026 — Present</span>
+        </div>
+        <p class="row-desc" data-en="Instituto de Pesquisas Eldorado · Brazil" data-pt="Instituto de Pesquisas Eldorado · Brasil">Instituto de Pesquisas Eldorado · Brazil</p>
+        <p class="row-desc"
+           data-en="RAG and analytics backend of a technology-intelligence platform for the oil &amp; gas sector, built with university partners and delivered to the client: ~13k patents and ~10k papers, on AWS EC2 with CI/CD. Hybrid retrieval (bge-m3, Qdrant + BM25 with RRF) and cross-encoder reranking, evidence extraction before synthesis, and citations checked in code."
+           data-pt="Backend de RAG e analytics de uma plataforma de inteligência tecnológica para o setor de óleo e gás, feita com universidades parceiras e entregue ao cliente: ~13 mil patentes e ~10 mil artigos, em AWS EC2 com CI/CD. Retrieval híbrido (bge-m3, Qdrant + BM25 com RRF) e reranking com cross-encoder, extração de evidências antes da síntese e citações verificadas em código.">RAG and analytics backend of a technology-intelligence platform for the oil &amp; gas sector, built with university partners and delivered to the client: ~13k patents and ~10k papers, on AWS EC2 with CI/CD. Hybrid retrieval (bge-m3, Qdrant + BM25 with RRF) and cross-encoder reranking, evidence extraction before synthesis, and citations checked in code.</p>
+        <div class="row-stats">
+          <div class="stat"><b>3–5 min → ~40 s</b><span data-en="query time" data-pt="tempo por consulta">query time</span></div>
+          <div class="stat"><b data-en="0% → 98.5%" data-pt="0% → 98,5%">0% → 98.5%</b><span data-en="country coverage, CJK applicants" data-pt="cobertura de país, depositantes CJK">country coverage, CJK applicants</span></div>
+          <div class="stat"><b>53% → 94%</b><span data-en="PT→EN translation, hardest queries" data-pt="tradução PT→EN, consultas mais difíceis">PT→EN translation, hardest queries</span></div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="row-top">
+          <span class="row-title">Machine Learning Engineer</span>
+          <span class="row-meta" data-en="Dec 2025 — Present" data-pt="dez 2025 — atual">Dec 2025 — Present</span>
+        </div>
+        <p class="row-desc" data-en="Iskra Labs · Independent" data-pt="Iskra Labs · Independente">Iskra Labs · Independent</p>
+        <p class="row-desc"
+           data-en="Independent initiative for applied AI: Clinical Evidence Navigator (RAG over clinical guidelines), Clinical SQL Analytics (hospital readmissions) and Sygnały (NLP clustering on a 248k-document Polish news corpus)."
+           data-pt="Iniciativa independente de IA aplicada: Clinical Evidence Navigator (RAG sobre diretrizes clínicas), Clinical SQL Analytics (readmissões hospitalares) e Sygnały (clustering de NLP em 248 mil notícias em polonês).">Independent initiative for applied AI: Clinical Evidence Navigator (RAG over clinical guidelines), Clinical SQL Analytics (hospital readmissions) and Sygnały (NLP clustering on a 248k-document Polish news corpus).</p>
+        <div class="row-stats">
+          <div class="stat"><b data-en="~358 s → ~7.1 s" data-pt="~358 s → ~7,1 s">~358 s → ~7.1 s</b><span data-en="end-to-end latency" data-pt="latência ponta a ponta">end-to-end latency</span></div>
+          <div class="stat"><b data-en="101,766" data-pt="101.766">101,766</b><span data-en="hospital encounters" data-pt="internações">hospital encounters</span></div>
+          <div class="stat"><b data-en="35.5% → 50.6%" data-pt="35,5% → 50,6%">35.5% → 50.6%</b><span data-en="readmission, low → high risk" data-pt="readmissão, risco baixo → alto">readmission, low → high risk</span></div>
+        </div>
+        <div class="row-links">
+          <a href="https://github.com/fccleber/clinical-evidence-navigator" target="_blank" rel="noopener noreferrer">Clinical Evidence Navigator ↗</a>
+          <a href="https://github.com/fccleber/clinical-sql-analytics-diabetes-readmissions" target="_blank" rel="noopener noreferrer">Clinical SQL Analytics ↗</a>
+          <a href="https://github.com/fccleber/sygnaly-miner" target="_blank" rel="noopener noreferrer">Sygnały ↗</a>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="row-top">
+          <span class="row-title" data-en="Machine Learning Engineer (Graduate Researcher)" data-pt="Engenheiro de Machine Learning (Pesquisador de Pós-Graduação)">Machine Learning Engineer (Graduate Researcher)</span>
+          <span class="row-meta" data-en="Sep 2023 — Sep 2025" data-pt="set 2023 — set 2025">Sep 2023 — Sep 2025</span>
+        </div>
+        <p class="row-desc" data-en="Kyoto University of Advanced Science · Kyoto, Japan" data-pt="Kyoto University of Advanced Science · Kyoto, Japão">Kyoto University of Advanced Science · Kyoto, Japan</p>
+        <p class="row-desc"
+           data-en="Short-term glucose prediction with LSTM-based models, including convolution-enhanced variants, on longitudinal data from Type 1 and Type 2 diabetes cohorts. Validation across patient groups and independent datasets; presented at IEEE GCCE 2024."
+           data-pt="Previsão de glicose de curto prazo com modelos baseados em LSTM, incluindo variantes com convolução, em dados longitudinais de coortes com diabetes tipo 1 e tipo 2. Validação entre grupos de pacientes e datasets independentes; apresentado no IEEE GCCE 2024.">Short-term glucose prediction with LSTM-based models, including convolution-enhanced variants, on longitudinal data from Type 1 and Type 2 diabetes cohorts. Validation across patient groups and independent datasets; presented at IEEE GCCE 2024.</p>
+        <div class="row-stats">
+          <div class="stat"><b data-en="up to 28%" data-pt="até 28%">up to 28%</b><span data-en="NRMSE inflation from data leakage" data-pt="inflação do NRMSE por vazamento de dados">NRMSE inflation from data leakage</span></div>
+          <div class="stat"><b>14% / 30%</b><span data-en="better cross-dataset MAE / NRMSE" data-pt="melhor MAE / NRMSE entre datasets">better cross-dataset MAE / NRMSE</span></div>
+          <div class="stat"><b>250+</b><span data-en="people" data-pt="pessoas">people</span></div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="row-top">
+          <span class="row-title" data-en="Android Software Engineer" data-pt="Engenheiro de Software Android">Android Software Engineer</span>
+          <span class="row-meta" data-en="Oct 2019 — Dec 2023" data-pt="out 2019 — dez 2023">Oct 2019 — Dec 2023</span>
+        </div>
+        <p class="row-desc" data-en="JIB · Paris, France (remote)" data-pt="JIB · Paris, França (remoto)">JIB · Paris, France (remote)</p>
+        <p class="row-desc"
+           data-en="Built the JIB Calls Android app from architecture to deployment and maintained JIB Home and JIB Residence: accessible smart-home control for people with reduced mobility in France, Belgium and Switzerland."
+           data-pt="Desenvolvi o app Android JIB Calls da arquitetura à publicação e mantive o JIB Home e o JIB Residence: controle acessível de casa inteligente para pessoas com mobilidade reduzida na França, Bélgica e Suíça.">Built the JIB Calls Android app from architecture to deployment and maintained JIB Home and JIB Residence: accessible smart-home control for people with reduced mobility in France, Belgium and Switzerland.</p>
+        <div class="row-stats">
+          <div class="stat"><b data-en="3,000+" data-pt="3.000+">3,000+</b><span data-en="users" data-pt="usuários">users</span></div>
+          <div class="stat"><b data-en="1,000+" data-pt="1.000+">1,000+</b><span data-en="households" data-pt="residências">households</span></div>
+          <div class="stat"><b>~40</b><span data-en="healthcare institutions" data-pt="instituições de saúde">healthcare institutions</span></div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="row-top">
+          <span class="row-title" data-en="Intern, Application &amp; Sales Engineering" data-pt="Estagiário, Engenharia de Aplicação e Vendas">Intern, Application &amp; Sales Engineering</span>
+          <span class="row-meta" data-en="Oct 2017 — Sep 2018" data-pt="out 2017 — set 2018">Oct 2017 — Sep 2018</span>
+        </div>
+        <p class="row-desc" data-en="Bosch Rexroth · Itatiba, Brazil" data-pt="Bosch Rexroth · Itatiba, Brasil">Bosch Rexroth · Itatiba, Brazil</p>
+      </div>
+    </div>
+
+    <!-- SKILLS -->
+    <div class="sec">
+      <div class="sec-label" data-en="Skills" data-pt="Competências">Skills</div>
+      <div class="skill-group">
+        <div class="skill-cat">AI &amp; LLM</div>
+        <div class="skill-list">RAG, LangGraph, hybrid search (Qdrant, BM25, RRF), cross-encoder reranking, bge-m3, Qwen2.5 / Ollama, structured outputs (Pydantic)</div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-cat">Machine Learning</div>
+        <div class="skill-list" data-en="PyTorch, deep learning, time-series forecasting" data-pt="PyTorch, deep learning, previsão de séries temporais">PyTorch, deep learning, time-series forecasting</div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-cat" data-en="Engineering" data-pt="Engenharia">Engineering</div>
+        <div class="skill-list">Python, FastAPI, SQL, Docker, AWS (EC2), CI/CD</div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-cat" data-en="Evaluation &amp; Data" data-pt="Avaliação e Dados">Evaluation &amp; Data</div>
+        <div class="skill-list" data-en="LLM and model evaluation, statistical testing, data validation, entity resolution" data-pt="Avaliação de LLMs e modelos, testes estatísticos, validação de dados, entity resolution">LLM and model evaluation, statistical testing, data validation, entity resolution</div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-cat">Mobile</div>
+        <div class="skill-list">Kotlin, Jetpack Compose, MVVM, Android</div>
+      </div>
+    </div>
+
+    <!-- EDUCATION -->
+    <div class="sec">
+      <div class="sec-label" data-en="Education" data-pt="Formação">Education</div>
+      <div class="row">
+        <div class="row-top">
+          <span class="row-title">Kyoto University of Advanced Science</span>
+          <span class="row-meta">2023 — 2025</span>
+        </div>
+        <p class="row-desc" data-en="Master's, Mechanical and Electrical Systems Engineering · GPA 4.0" data-pt="Mestrado, Mechanical and Electrical Systems Engineering · GPA 4.0">Master's, Mechanical and Electrical Systems Engineering · GPA 4.0</p>
+      </div>
+      <div class="row">
+        <div class="row-top">
+          <span class="row-title">iCEV — Instituto de Ensino Superior</span>
+          <span class="row-meta">2022 — 2023</span>
+        </div>
+        <p class="row-desc" data-en="Postgraduate Specialization, Business Intelligence and Data Science" data-pt="Especialização, Business Intelligence e Data Science">Postgraduate Specialization, Business Intelligence and Data Science</p>
+      </div>
+      <div class="row">
+        <div class="row-top">
+          <span class="row-title">Universidade Estadual de Campinas (UNICAMP)</span>
+          <span class="row-meta">2013 — 2020</span>
+        </div>
+        <p class="row-desc" data-en="B.Eng., Control and Automation Engineering" data-pt="Bacharelado, Engenharia de Controle e Automação">B.Eng., Control and Automation Engineering</p>
+      </div>
+      <div class="row">
+        <div class="row-top">
+          <span class="row-title">Universidade Federal do Piauí</span>
+          <span class="row-meta">2008 — 2012</span>
+        </div>
+        <p class="row-desc" data-en="Bachelor's, Dentistry" data-pt="Bacharelado, Odontologia">Bachelor's, Dentistry</p>
+      </div>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="sec">
+      <div class="sec-label" data-en="Contact" data-pt="Contato">Contact</div>
+      <div class="contact-row">
+        <a href="mailto:you@example.com">you@example.com</a>
+        <a href="https://www.linkedin.com/in/fccleber/" target="_blank" rel="noopener noreferrer">linkedin.com/in/fccleber</a>
+        <a href="https://github.com/fccleber" target="_blank" rel="noopener noreferrer">github.com/fccleber</a>
+      </div>
+      <p class="note" data-en="Based in Brazil" data-pt="Baseado no Brasil">Based in Brazil</p>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <span>© 2026 Cleber F. Carvalho</span>
+  <span data-en="AI Engineer &amp; Machine Learning Engineer · Brazil" data-pt="Engenheiro de IA &amp; Machine Learning · Brasil">AI Engineer &amp; Machine Learning Engineer · Brazil</span>
+</footer>
+
+<script>
+  (function () {
+    function store(key, val) { try { localStorage.setItem(key, val); } catch (e) {} }
+    function load(key) { try { return localStorage.getItem(key); } catch (e) { return null; } }
+
+    var btnEn = document.getElementById('btn-en');
+    var btnPt = document.getElementById('btn-pt');
+    function setLang(lang) {
+      document.querySelectorAll('[data-en]').forEach(function (el) {
+        var v = el.getAttribute('data-' + lang);
+        if (v !== null) el.innerHTML = v;
+      });
+      document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
+      btnEn.classList.toggle('on', lang === 'en');
+      btnPt.classList.toggle('on', lang === 'pt');
+      store('lang', lang);
+    }
+    btnEn.addEventListener('click', function () { setLang('en'); });
+    btnPt.addEventListener('click', function () { setLang('pt'); });
+
+    function setTheme(t) {
+      document.body.classList.toggle('light', t === 'light');
+      store('theme', t);
+    }
+    document.getElementById('theme-toggle').addEventListener('click', function () {
+      setTheme(document.body.classList.contains('light') ? 'dark' : 'light');
+    });
+
+    if (load('theme') === 'light') setTheme('light');
+    if (load('lang') === 'pt') setLang('pt');
+  })();
+</script>
+</body>
+</html>
