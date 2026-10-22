@@ -11,7 +11,7 @@
 <meta property="og:url" content="https://fccleber.github.io/">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="pt_BR">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23c9a06a'/%3E%3Cstop offset='1' stop-color='%238a6a3f'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='32' cy='32' r='32' fill='url(%23g)'/%3E%3Ctext x='32' y='40' font-family='monospace' font-size='22' font-weight='700' fill='%2307080b' text-anchor='middle'%3ECC%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23a8324d'/%3E%3Cstop offset='1' stop-color='%235e1527'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='32' cy='32' r='32' fill='url(%23g)'/%3E%3Ctext x='32' y='40' font-family='monospace' font-size='22' font-weight='700' fill='%23f7e9ec' text-anchor='middle'%3ECC%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -19,29 +19,29 @@
   *, ::before, ::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { -webkit-font-smoothing: antialiased; }
   :root {
-    --bg: #07080b; --card: #0e1016; --card-2: #12151d;
-    --ink: #efece4; --ink-2: #948e82; --ink-3: #56514a;
-    --gold: #c9a06a; --gold-hi: #e3c795;
-    --line: rgba(239,236,228,.08);
+    --bg: #0c0809; --card: #140e10; --card-2: #1b1215;
+    --ink: #f1e9ea; --ink-2: #a8979a; --ink-3: #6b5a5e;
+    --gold: #c46a7e; --gold-hi: #e3a3b1;
+    --line: rgba(241,233,234,.08);
     --sans: "DM Sans", system-ui, sans-serif;
     --mono: "JetBrains Mono", ui-monospace, monospace;
   }
   body.light {
-    --bg: #f5f1e8; --card: #ffffff; --card-2: #faf7f0;
-    --ink: #201d18; --ink-2: #6b6459; --ink-3: #9c9284;
-    --gold: #96723f; --gold-hi: #7a5a30;
-    --line: rgba(32,29,24,.09);
+    --bg: #f7f0f0; --card: #ffffff; --card-2: #fbf5f5;
+    --ink: #241417; --ink-2: #6e5a5e; --ink-3: #a08c90;
+    --gold: #7b1e34; --gold-hi: #5e1527;
+    --line: rgba(36,20,23,.09);
   }
   body { background: var(--bg); color: var(--ink); font-family: var(--sans); line-height: 1.55; font-size: 14.5px; transition: background .25s, color .25s; }
   a { color: inherit; text-decoration: none; }
-  ::selection { background: rgba(201,160,106,.25); color: var(--gold-hi); }
+  ::selection { background: rgba(196,106,126,.25); color: var(--gold-hi); }
 
   .page { max-width: 640px; margin: 0 auto; padding: clamp(1.5rem, 5vw, 3rem) 1.2rem; }
   .card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: clamp(1.6rem, 4vw, 2.4rem); transition: background .25s, border-color .25s; }
 
   .head { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; margin-bottom: 1.6rem; }
   .head-left { display: flex; gap: .9rem; align-items: center; }
-  .avatar { width: 46px; height: 46px; border-radius: 50%; background: linear-gradient(135deg, var(--gold), #8a6a3f); display: flex; align-items: center; justify-content: center; font-family: var(--mono); font-weight: 600; color: var(--bg); font-size: .9rem; flex-shrink: 0; }
+  .avatar { width: 46px; height: 46px; border-radius: 50%; background: linear-gradient(135deg, #a8324d, #5e1527); display: flex; align-items: center; justify-content: center; font-family: var(--mono); font-weight: 600; color: color: #f7e9ec; font-size: .9rem; flex-shrink: 0; }
   .name { font-size: 1.15rem; font-weight: 700; letter-spacing: -.01em; }
   .role { font-size: .78rem; color: var(--ink-2); margin-top: 2px; }
   .head-right { display: flex; flex-direction: column; align-items: flex-end; gap: .6rem; }
@@ -75,7 +75,7 @@
   .stat b { font-family: var(--mono); font-size: .78rem; font-weight: 600; color: var(--gold-hi); font-variant-numeric: tabular-nums; white-space: nowrap; }
   .stat span { font-size: .68rem; color: var(--ink-2); }
   .row-links { display: flex; flex-wrap: wrap; gap: .9rem; margin-top: .55rem; font-family: var(--mono); font-size: .66rem; }
-  .row-links a { color: var(--gold); border-bottom: 1px solid rgba(201,160,106,.35); }
+  .row-links a { color: var(--gold); border-bottom: 1px solid rgba(196,106,126,.35); }
   .row-links a:hover { color: var(--gold-hi); border-color: var(--gold-hi); }
 
   .skill-group { margin-bottom: .7rem; }
@@ -84,7 +84,7 @@
   .skill-list { font-size: .78rem; color: var(--ink-2); }
 
   .contact-row { display: flex; flex-wrap: wrap; gap: 1.2rem; font-family: var(--mono); font-size: .75rem; }
-  .contact-row a { color: var(--gold-hi); border-bottom: 1px solid rgba(227,199,149,.3); }
+  .contact-row a { color: var(--gold-hi); border-bottom: 1px solid rgba(227,163,177,.3); }
   .contact-row a:hover { color: var(--gold); }
   .note { font-size: .76rem; color: var(--ink-3); margin-top: .7rem; }
 
