@@ -45,9 +45,6 @@
   .role { font-size: .78rem; color: var(--ink-2); margin-top: 2px; }
   .head-right { display: flex; flex-direction: column; align-items: flex-end; gap: .6rem; }
   .top-controls { display: flex; align-items: center; gap: .7rem; }
-  .lang-switch { display: flex; gap: .4rem; font-family: var(--mono); font-size: .62rem; color: var(--ink-3); }
-  .lang-switch button { background: none; border: none; color: inherit; cursor: pointer; padding: 0; font: inherit; }
-  .lang-switch button.on { color: var(--gold); }
   .theme-toggle { background: none; border: 1px solid var(--line); border-radius: 50%; width: 26px; height: 26px; display: flex; align-items: center; justify-content: center; cursor: pointer; color: var(--ink-2); transition: color .2s, border-color .2s; flex-shrink: 0; }
   .theme-toggle:hover { color: var(--gold); border-color: var(--gold); }
   .theme-toggle svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 1.8; }
@@ -95,14 +92,11 @@
         <div class="avatar" aria-hidden="true">FCC</div>
         <div>
           <div class="name">Cleber F. Carvalho</div>
-          <div class="role" data-en="AI Engineer · Brazil" data-pt="Engenheiro de IA · Brasil">AI Engineer · Brazil</div>
+          <div class="role">Engineer</div>
         </div>
       </div>
       <div class="head-right">
         <div class="top-controls">
-          <div class="lang-switch">
-            <button class="on" id="btn-en">EN</button><span>/</span><button id="btn-pt">PT</button>
-          </div>
           <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light/dark mode">
             <svg class="icon-moon" viewBox="0 0 24 24"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5z" stroke-linecap="round" stroke-linejoin="round"/></svg>
             <svg class="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.5"/><path d="M12 2.5v2.5M12 19v2.5M4.2 4.2l1.8 1.8M18 18l1.8 1.8M2.5 12H5M19 12h2.5M4.2 19.8L6 18M18 6l1.8-1.8" stroke-linecap="round"/></svg>
@@ -111,89 +105,59 @@
         <div class="icon-links">
           <a href="https://github.com/fccleber" target="_blank" rel="noopener noreferrer">GitHub</a>
           <a href="https://www.linkedin.com/in/fccleber/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          <a href="mailto:you@example.com">Email</a>
         </div>
       </div>
     </div>
 
     <!-- ABOUT -->
     <div class="sec">
-      <div class="sec-label" data-en="Hi there" data-pt="Oi">Hi there</div>
-      <p class="about-text"
-         data-en="Hey, thanks for stopping by! 👋 I'm Cleber, I work with AI (mostly making machines read documents and answer questions without making things up)."
-         data-pt="Oi, obrigado pela visita! 👋 Sou o Cleber e trabalho com IA (principalmente fazendo máquinas lerem documentos e responderem perguntas sem inventar nada).">Hey, thanks for stopping by! 👋 I'm Cleber, I work with AI (mostly making machines read documents and answer questions without making things up).</p>
-      <p class="about-text"
-         data-en="This little corner of the internet is still &lt;strong&gt;under construction&lt;/strong&gt;. Come back soon, or say hi on LinkedIn in the meantime."
-         data-pt="Este cantinho da internet ainda está &lt;strong&gt;em construção&lt;/strong&gt;. Volte em breve, ou me dá um oi no LinkedIn enquanto isso.">This little corner of the internet is still <strong>under construction</strong>. Come back soon, or say hi on LinkedIn in the meantime.</p>
+      <div class="sec-label">Hey,</div>
+      <p class="about-text">Thanks for stopping by! I'm Cleber, engineer working with AI (mostly making machines read thousands of documents and answer questions without making things up).</p>
+      <p class="about-text">This little corner of the internet is still <strong>under construction</strong>. Come back soon, or say hi on LinkedIn in the meantime ;)</p>
     </div>
 
     <!-- UNDER CONSTRUCTION -->
     <div class="sec">
       <div class="ascii-wrap">
-<pre class="ascii" aria-label="A small robot in a hard hat next to an under construction sign and three traffic cones"
-     data-en="      _______
-    _/_______\_       +--------------------------+
-     | o   o |        |    &lt;span class=&quot;hl&quot;&gt;UNDER CONSTRUCTION&lt;/span&gt;    |
-     |   v   |        |  thanks for stopping by  |
-     '-------'        +--------------------------+
-    ___|   |___               |          |
-   /   |   |   \==[]          |          |
-       |___|
-       /   \            &lt;span class=&quot;cone&quot;&gt;/\        /\        /\&lt;/span&gt;
-      /     \          &lt;span class=&quot;cone&quot;&gt;/__\      /__\      /__\&lt;/span&gt;
-     ~~     ~~        &lt;span class=&quot;cone&quot;&gt;/____\    /____\    /____\&lt;/span&gt;"
-     data-pt="      _______
-    _/_______\_       +--------------------------+
-     | o   o |        |      &lt;span class=&quot;hl&quot;&gt;EM CONSTRUÇÃO&lt;/span&gt;       |
-     |   v   |        |   obrigado pela visita   |
-     '-------'        +--------------------------+
-    ___|   |___               |          |
-   /   |   |   \==[]          |          |
-       |___|
-       /   \            &lt;span class=&quot;cone&quot;&gt;/\        /\        /\&lt;/span&gt;
-      /     \          &lt;span class=&quot;cone&quot;&gt;/__\      /__\      /__\&lt;/span&gt;
-     ~~     ~~        &lt;span class=&quot;cone&quot;&gt;/____\    /____\    /____\&lt;/span&gt;">      _______
-    _/_______\_       +--------------------------+
-     | o   o |        |    <span class="hl">UNDER CONSTRUCTION</span>    |
-     |   v   |        |  thanks for stopping by  |
-     '-------'        +--------------------------+
-    ___|   |___               |          |
-   /   |   |   \==[]          |          |
-       |___|
-       /   \            <span class="cone">/\        /\        /\</span>
-      /     \          <span class="cone">/__\      /__\      /__\</span>
-     ~~     ~~        <span class="cone">/____\    /____\    /____\</span></pre>
-      </div>
-      <p class="status"><span data-en="building something nice" data-pt="construindo algo legal">building something nice</span><span class="cursor">_</span></p>
-    </div>
+<pre class="ascii" aria-label="A coffee cup next to a terminal showing the site being brewed">   $ brew --origin brazilian-coffee \
+          --site fccleber.github.io
 
+     <span class="cone" id="steam1">) )</span>       reranking beans ..... 81%
+      <span class="cone" id="steam2">( (</span>      grinding beans ...... 64%
+   .______.    tuning PID (°C) ..... 48%
+   |      |]   checking leakage .... <span class="hl">0 leaks</span>
+   \      /    pouring content ..... 12%
+    `----'     adding sugar ........ <span class="hl">NO SUGAR</span></pre>
+      
   </div>
-</div>
+      <p class="status"><span>brewing something nice</span><span class="cursor">_</span></p>
+      <script>
+        (function () {
+          var s1 = document.getElementById('steam1');
+          var s2 = document.getElementById('steam2');
+          var frames = ['( (', ' ( ', ') )', ' ) ', '( )', ') ('];
+          var i = 0;
+          var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+          if (s1 && s2 && !reduce) {
+            setInterval(function () {
+              s1.textContent = frames[i % frames.length];
+              s2.textContent = frames[(i + frames.length - 2) % frames.length];
+              i++;
+            }, 950);
+          }
+        })();
+      </script>
+    </div>
 
 <footer>
   <span>© 2026 Cleber F. Carvalho</span>
-  <span data-en="made with coffee ☕" data-pt="feito com café ☕">made with coffee ☕</span>
+  <span>コーヒーで作りました</span>
 </footer>
 
 <script>
   (function () {
     function store(key, val) { try { localStorage.setItem(key, val); } catch (e) {} }
     function load(key) { try { return localStorage.getItem(key); } catch (e) { return null; } }
-
-    var btnEn = document.getElementById('btn-en');
-    var btnPt = document.getElementById('btn-pt');
-    function setLang(lang) {
-      document.querySelectorAll('[data-en]').forEach(function (el) {
-        var v = el.getAttribute('data-' + lang);
-        if (v !== null) el.innerHTML = v;
-      });
-      document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
-      btnEn.classList.toggle('on', lang === 'en');
-      btnPt.classList.toggle('on', lang === 'pt');
-      store('lang', lang);
-    }
-    btnEn.addEventListener('click', function () { setLang('en'); });
-    btnPt.addEventListener('click', function () { setLang('pt'); });
 
     function setTheme(t) {
       document.body.classList.toggle('light', t === 'light');
@@ -204,7 +168,6 @@
     });
 
     if (load('theme') === 'light') setTheme('light');
-    if (load('lang') === 'pt') setLang('pt');
   })();
 </script>
 </body>
